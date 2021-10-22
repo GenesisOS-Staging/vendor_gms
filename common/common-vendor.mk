@@ -194,6 +194,31 @@ PRODUCT_COPY_FILES += \
     vendor/gms/common/proprietary/system_ext/etc/permissions/privapp-permissions-google-se.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-google-se.xml \
     vendor/gms/common/proprietary/system_ext/etc/sysconfig/preinstalled-packages-com.android.google.avatarpicker.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/preinstalled-packages-com.android.google.avatarpicker.xml \
 
+# Recorder
+ifeq ($(TARGET_SUPPORTS_GOOGLE_RECORDER),true)
+PRODUCT_PACKAGES += \
+    RecorderPrebuilt_630544637
+endif
+
+# arcore
+ifeq ($(TARGET_INCLUDE_STOCK_ARCORE),true)
+PRODUCT_PACKAGES += \
+    arcore-1.42
+endif
+
+# AICore
+ifeq ($(TARGET_INCLUDE_STOCK_AICORE),true)
+PRODUCT_PACKAGES += \
+    AICorePrebuilt-aicore_20240509.01_RC02
+endif
+
+# Live Wallpapers
+ifeq ($(TARGET_INCLUDE_LIVE_WALLPAPERS),true)
+PRODUCT_PACKAGES += \
+    PixelLiveWallpaperPrebuilt-25000013 \
+    PixelWallpapers2024
+endif
+
 PRODUCT_PACKAGES += \
     GoogleExtShared \
     GooglePrintRecommendationService \
@@ -215,7 +240,6 @@ PRODUCT_PACKAGES += \
     Photos \
     PixelThemesStub \
     PixelThemesStub2022_and_newer \
-    PixelWallpapers2024 \
     PrebuiltDeskClockGoogle_76004981 \
     PrebuiltGmail \
     SoundAmplifierPrebuilt_v4.7.638126989 \
@@ -224,9 +248,7 @@ PRODUCT_PACKAGES += \
     TrichromeLibrary-Stub \
     WallpaperEmojiPrebuilt-v2804 \
     WebViewGoogle-Stub \
-    arcore-1.42 \
     talkback \
-    AICorePrebuilt-aicore_20240509.01_RC02 \
     AiWallpapers \
     AndroidAutoStubPrebuilt \
     ConfigUpdater \
@@ -238,7 +260,6 @@ PRODUCT_PACKAGES += \
     GoogleRestorePrebuilt-v603273 \
     PartnerSetupPrebuilt \
     Phonesky \
-    PixelLiveWallpaperPrebuilt-25000013 \
     PrebuiltBugle \
     PrebuiltGmsCore \
     PrebuiltGmsCoreVic_AdsDynamite.uncompressed \
@@ -252,7 +273,6 @@ PRODUCT_PACKAGES += \
     AndroidPlatformServices \
     MlkitBarcodeUIPrebuilt \
     VisionBarcodePrebuilt \
-    RecorderPrebuilt_630544637 \
     SafetyHubSuwPrebuilt \
     ScribePrebuilt_v7.0.633113815 \
     SearchSelectorPrebuilt \
