@@ -33,6 +33,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.opa.eligible_device=true
 
+# GMS RRO overlay
+PRODUCT_PACKAGES += \
+    GoogleSettingsOverlay
+
 # Google Battery
 TARGET_DOES_NOT_SUPPORT_GOOGLE_BATTERY ?= true
 
