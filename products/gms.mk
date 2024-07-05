@@ -33,6 +33,16 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.opa.eligible_device=true
 
+# Google Battery
+TARGET_DOES_NOT_SUPPORT_GOOGLE_BATTERY ?= true
+
+# Include TurboAdapter without Google Battery support
+ifeq ($(TARGET_DOES_NOT_SUPPORT_GOOGLE_BATTERY),true)
+PRODUCT_PACKAGES += \
+    TurboAdapter_NoBatt \
+    libpowerstatshaldataprovider
+endif
+
 # SetupWizard Props
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.setupwizard.enterprise_mode=1 \

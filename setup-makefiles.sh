@@ -40,3 +40,6 @@ write_footers
 
 # Overlays
 echo -e "\ninclude vendor/gms/common/overlays.mk" >> $PRODUCTMK
+
+# Exclusions
+sed -i '/libpowerstatshaldataprovider/d' "${ANDROID_ROOT}/vendor/gms/common/common-vendor.mk"
